@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample closing prices
+data = pd.DataFrame({
+ 'Close':[100,102,101,105,107,110,108,111,115,117]
+})
+
+# Moving Average (window = 3)
+data['MA'] = data['Close'].rolling(window=3).mean()
+
+print(data)
+
+# Plot
+plt.plot(data['Close'], label='Original')
+plt.plot(data['MA'], label='Moving Avg')
+plt.legend()
+plt.show()
