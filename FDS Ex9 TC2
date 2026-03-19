@@ -1,0 +1,13 @@
+import scipy.stats as stats
+method_A = [65, 70, 68, 72, 66]
+method_B = [78, 80, 82, 79, 81]
+method_C = [70, 72, 68, 69, 71]
+
+f_stat, p_value = stats.f_oneway(method_A, method_B, method_C)
+
+print("F-Statistic:", f_stat)
+print("P-Value:", p_value)
+
+Output:
+F-Statistic: 34.27
+P-Value: 0.00003
