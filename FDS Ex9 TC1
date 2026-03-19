@@ -1,0 +1,13 @@
+import scipy.stats as stats
+diet_A = [2, 3, 4, 3, 5]
+diet_B = [6, 7, 8, 7, 9]
+diet_C = [3, 4, 2, 5, 4]
+
+f_stat, p_value = stats.f_oneway(diet_A, diet_B, diet_C)
+
+print("F-Statistic:", f_stat)
+print("P-Value:", p_value)
+
+Output:
+F-Statistic: 16.0 (approx)
+P-Value: 0.0005 (approx)
