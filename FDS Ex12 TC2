@@ -1,0 +1,21 @@
+import pandas as pd
+
+data = pd.DataFrame({
+ 'Passengers':[200,220,210,250,270,300,280,310,330,350]
+})
+data['MA'] = data['Passengers'].rolling(3).mean()
+
+print(data)
+
+output:
+   Passengers     MA
+0        200     NaN
+1        220     NaN
+2        210   210.0
+3        250   226.6
+4        270   243.3
+5        300   273.3
+6        280   283.3
+7        310   296.6
+8        330   306.6
+9        350   330.0
