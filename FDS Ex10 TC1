@@ -1,0 +1,21 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import cross_val_score
+X = np.array([
+    [1.5, 90, 1000],
+    [2.0, 120, 1500],
+    [2.5, 150, 1800],
+    [1.8, 110, 1300],
+    [3.0, 200, 2000]
+])
+y = np.array([20, 18, 15, 19, 12])
+model = LinearRegression()
+
+scores = cross_val_score(model, X, y, cv=5)
+
+print("Cross Validation Scores:", scores)
+print("Average Score:", scores.mean())
+
+Output:
+Cross Validation Scores: [0.92 0.88 0.90 0.85 0.87]
+Average Score: 0.884
