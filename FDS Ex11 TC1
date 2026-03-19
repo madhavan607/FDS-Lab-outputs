@@ -1,0 +1,20 @@
+import pandas as pd
+import seaborn as sns
+from sklearn.linear_model import LogisticRegression
+import matplotlib.pyplot as plt
+
+data = pd.DataFrame({
+ 'Age':[45,50,35,60,55],
+ 'BMI':[22,25,20,30,28],
+ 'Chol':[180,200,170,220,210],
+ 'Disease':[0,1,0,1,1]
+})
+
+X = data[['Age','BMI','Chol']]
+y = data['Disease']
+
+model = LogisticRegression().fit(X,y)
+print(model.predict(X))
+
+sns.countplot(x='Disease',data=data)
+plt.show()
